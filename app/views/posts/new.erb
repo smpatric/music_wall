@@ -1,0 +1,27 @@
+<% if @post && @post.errors.any? %>
+  <div>
+    <strong>Some issues with your post, please fix them:</strong>
+    <ul>
+      <% @post.errors.full_messages.each do |post| %>
+        <li><%= post %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<form action="/posts" method="POST">
+  <div>
+    <label>Your Name:</label>
+    <input type="text" name="author" value="<%= @post && @post.author %>">
+  </div>
+  <div>
+    <label>Link:</label>
+    <input type="text" name="link" value="<%= @post && @post.link %>">
+  </div>
+  <div>
+    <label>Song Title:</label>
+    <input type="text" name="song_title" value="<%= @post && @post.song_title %>">
+  </div>
+  <div>
+    <input type="submit" value="Submit">
+  </div>
+</form>

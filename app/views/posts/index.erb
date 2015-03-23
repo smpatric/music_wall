@@ -1,0 +1,12 @@
+<a href="/posts/new">Add A Song</a></br>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <h3>
+      <a href="<%= post.link %>"><%= post.song_title %></a>
+    </h3>
+    <p>
+      <%= post.author %>
+    </p>
+  </div>
+<% end %>
